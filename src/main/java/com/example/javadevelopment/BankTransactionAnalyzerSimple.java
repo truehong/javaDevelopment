@@ -18,7 +18,7 @@ public class BankTransactionAnalyzerSimple {
         final Path path = Path.of(RESOURCES + "txt.csv");
         final List<String > lines = Files.readAllLines(path);
 
-        final List<BankTransaction> bankTransactions = bankStatementCSVParser.parseLinesFromCSV(lines);
+        final List<BankTransaction> bankTransactions = bankStatementCSVParser.parseLineFrom(lines);
         System.out.println("The total for all transactions is " + calculateAmount(bankTransactions));
         System.out.println("The total for all transaction is " + selectInMonth(bankTransactions, Month.JANUARY));
     }
